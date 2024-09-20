@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <div id="app">
+        <h1 class="title">EXPENSE TRACKER</h1>
+        <p class="abt">
+            <q>This expense tracker helps you track your expenses for as long as you wish. Whenever you wish to start
+                tracking afresh (This can be after a week or a month or any period of time), click on the clear records
+                button to clear everything. Click on the 'Export as CSV button to export the records as a .csv
+                file'</q><small> -- Manaswini</small>
+        </p>
+        <div class="flex">
+            <div class="flex_content flex_form">
+                <form class="form" onsubmit="return false;"> <!-- Prevent form submission -->
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" autocomplete="off" required>
+    
+                    <label for="to">To</label>
+                    <input type="text" id="to" autocomplete="off" required>
+    
+                    <label for="note">Note</label>
+                    <textarea id="note" rows="5"></textarea>
+    
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+    
+                    <button class="btn btn_success" type="submit">Add expense</button>
+                    <button class="btn btn_danger" type="button" onclick="clearExpenses()">Clear record</button>
+                    <button class="btn btn_primary" type="button" onclick="getCsv()">Export as .csv</button>
+                </form>
+            </div>
+            <div class="flex_content flex_expenses">
+                <h2 class="head">Expenses</h2>
+                <div class="total">
+                    <h3>TOTAL</h3>
+                    <h3 id="totalAmount">$0.0</h3> <!-- Placeholder for total amount -->
+                </div>
+                <div class="expense" id="expenseList">
+                    <!-- Example of static expense entry -->
+                    <div class="expense">
+                        <p class="to"><b>To:</b> Sample Expense</p>
+                        <p class="date"><b>Date:</b> 2024-01-01</p>
+                        <p class="amnt"><b>Amount:</b> $100.00</p>
+                        <p class="note"><b>Note:</b> Sample note</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to your JS -->
+</body>
+</html>
